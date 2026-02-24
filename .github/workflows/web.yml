@@ -34,7 +34,11 @@ jobs:
           node-version: 22.14.0
           cache: 'npm'
       - run: npm install
-      - run: npm run test
+      - name: Start server and run tests
+        run: |
+          npm start &
+          npx wait-on http://localhost:8080
+          npm run test
 
   build:
     needs: [eslint, test]

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Editor</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-actions">
+            <h2>Товары</h2>
+            <button id="add-btn" class="icon-btn add-btn">+</button>
+        </div>
+
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Стоимость</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title">Добавить товар</h3>
+            <form id="crud-form">
+                <div class="form-group">
+                    <label for="name-input">Название</label>
+                    <input type="text" id="name-input" class="form-control">
+                    <div id="name-error" class="error-tooltip hidden">Введите название</div>
+                </div>
+                <div class="form-group">
+                    <label for="price-input">Стоимость</label>
+                    <input type="number" id="price-input" class="form-control" min="1">
+                    <div id="price-error" class="error-tooltip hidden">Стоимость должна быть больше 0</div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-btn" class="btn cancel-btn">Отмена</button>
+                    <button type="submit" class="btn save-btn">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
